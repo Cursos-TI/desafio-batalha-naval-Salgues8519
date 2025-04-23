@@ -1,9 +1,5 @@
 #include <stdio.h>
 
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
-
 int main() {
     int tabuleiro[10][10];
     int i, j;
@@ -15,17 +11,38 @@ int main() {
         }
     }
     
-    //Posiciona navio vertical de tamanho 3 em (linha=1, coluna=2)
+    //Posiciona navio vertical 
     for (i = 1; i < 1 + 3; i++) {
         tabuleiro[i][2] = 3;
     }
     
-    //Posiciona navio horizontal de tamanho 3 em (linha=5, coluna=4)
+    //Posiciona navio horizontal 
     for (j = 4; j < 4 + 3; j++) {
         tabuleiro[5][j] = 3;
     }
+
+    //Posiciona navio diagonal 1 (esquerda para direita)
+    for (i = 1; i <= 3; i++) {
+        for (j = 7; j <= 9; j++) {
+            if (i - 1 == j - 7) {
+                tabuleiro[i][j] = 3;
+            }
+        }
+    }
+
+    // Posiciona navio diagonal 2 (direira para esquerda)
+    for ( j = 2; j <  2 + 1; j++){
+        for( j = 1; j < 1 + 1; j++){
+            for( j = 0; j < 0 + 1; j++){
+                tabuleiro[9][j] = 3;
+            }
+            tabuleiro[8][j] = 3;
+        }
+        tabuleiro[7][j] = 3;
+    }
+
     printf("Tabuleiro Batalha Naval\n");
-    
+
     //Imprime cabeçalho de colunas
     printf("   ");
     for (j = 0; j < 10; j++) {
@@ -41,11 +58,10 @@ int main() {
         }
         printf("\n");
     }
+    
+    return 0;
+}
 
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
 
     // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
@@ -68,5 +84,3 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
-    return 0;
-}
