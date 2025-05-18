@@ -62,9 +62,9 @@ int main() {
     printf("Tabuleiro Batalha Naval\n");
 
     // Imprime cabeçalho de colunas
-    printf("   ");
+   printf("   ");
     for (j = 0; j < COLUNA; j++) {
-        printf("%2d ", j);
+        printf(" %c ", 'A' + j);
     }
     printf("\n");
 
